@@ -1,0 +1,5 @@
+.vscode
+*.exe
+beacon.cpp
+evt.cpp
+*.code-workspace
