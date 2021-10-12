@@ -17,8 +17,8 @@ namespace beacon
         callback(const EventFunctionwSendernArgs &clbk) : m_function_callback(clbk) {}
         callback(EventFunctionwSendernArgs &&clbk) : m_function_callback(clbk) {}
 
-        callback(const EventFunctionwSendernArgs &clbk, sender *s, args *a) : m_function_callback(clbk), m_sender(s), m_args(a) {}
-        callback(EventFunctionwSendernArgs &&clbk, sender *s, args *a) : m_function_callback(clbk), m_sender(s), m_args(a) {}
+        callback(const EventFunctionwSendernArgs &clbk, sender *s, args *a) : m_sender(s), m_args(a), m_function_callback(clbk) {}
+        callback(EventFunctionwSendernArgs &&clbk, sender *s, args *a) :  m_sender(s), m_args(a), m_function_callback(clbk) {}
 
         void operator()() const
         {

@@ -1,17 +1,4 @@
-<img src="./logo/logo.svg" alt="drawing" width="200"/>
----
-
-Beacon is a multiparadigm C++ event management library with focus on fast and simple integration.
-Be wary, this is a work in progress, compatibility may break in future versions
-
-# Installation
-
-The library is header only, integrating it to your project is as easy as including beacon.hpp and you are ready to go!
-
-# License
-
-
-## The MIT License (MIT)
+# The MIT License (MIT)
 
 Copyright © 2021 Imanol Fotia
 

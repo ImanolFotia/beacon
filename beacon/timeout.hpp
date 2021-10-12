@@ -58,7 +58,7 @@ namespace beacon
                     fn(args...);
                 is_active = false;
             });
-            //worker.detach();
+            
             return handler;
         }
 
@@ -87,7 +87,7 @@ namespace beacon
                     fn(args...);
                 is_active = false;
             });
-            //worker.detach();
+            
             return handler;
         }
 
