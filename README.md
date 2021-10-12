@@ -3,7 +3,35 @@
 ---
 
 Beacon is a multiparadigm C++ event management library with focus on fast and simple integration.
-Be wary, this is a work in progress, compatibility may break in future versions
+Be wary, this is a work in progress, compatibility may break in future versions.
+If you are familiar with .NET's event manager classes you'll find this library easy to use!
+
+# Features
+
+* Single event handler
+* Multiple event handler and dispatcher
+* Callbacks
+* Interval timing events
+
+# Examples
+
+## Simple interval event
+
+```c++
+#include "beacon.hpp"
+#include <cstdio>
+
+int main(int argc, char** argv) {
+    
+    beacon::interval inter;
+    inter.set(1000, [](const char* msg){ puts(msg); }, "Hello, World!");
+    
+    return 0;
+}
+```
+```"Hello, World!"``` will be printed every 1000 milliseconds
+
+
 
 # Installation
 
