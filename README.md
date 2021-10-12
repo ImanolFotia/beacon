@@ -1,4 +1,5 @@
 <img src="./logo/logo.svg" alt="drawing" width="200"/>
+
 ---
 
 Beacon is a multiparadigm C++ event management library with focus on fast and simple integration.
