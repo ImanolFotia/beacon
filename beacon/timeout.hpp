@@ -47,12 +47,6 @@ namespace beacon
             worker = std::thread([fn, args..., inter, this]() {
                 std::unique_lock<std::mutex> lk(mut);
 
-                if (this == nullptr)
-                {
-                    err_str = "The calling object has been destroyed, can't continue;";
-                    return;
-                }
-
                 std::this_thread::sleep_for(std::chrono::milliseconds(inter));
                 if (cv.wait_for(lk, std::chrono::milliseconds(0), [&run = this->is_active, &paused = this->paused] { return run || !paused; }))
                     fn(args...);
@@ -76,11 +70,6 @@ namespace beacon
             worker = std::thread([fn, args..., inter, this]() {
                 std::unique_lock<std::mutex> lk(mut);
 
-                if (this == nullptr)
-                {
-                    err_str = "The calling object has been destroyed, can't continue;";
-                    return;
-                }
 
                 std::this_thread::sleep_for(custom_duration);
                 if (cv.wait_for(lk, std::chrono::milliseconds(0), [&run = this->is_active, &paused = this->paused] { return run && !paused; }))

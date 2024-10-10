@@ -31,10 +31,6 @@ namespace beacon
                 std::unique_lock<std::mutex> lk(mut);
                 while (cv.wait_for(lk, std::chrono::milliseconds(0), [&run= this->is_active] { return run; }))
                 {
-                    if(this == nullptr) {
-                        err_str = "The calling object has been destroyed, can't continue;"; 
-                        return;
-                    }
                     auto start = std::chrono::steady_clock::now();
                     fn(args...);
                     auto end = std::chrono::steady_clock::now();
